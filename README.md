@@ -8,9 +8,11 @@ This public document is the deliverable of the audit engagement.
 
 ## Summary
 
-The contract as a whole produces the desired functionality of the contract. There are some significant attack vectors which allow the crowd sale to be gamed. Although these vectors primarily stand to benefit the *owner* of the contracts, their presence can cause reasonable doubt on the validity of the tokens and crowd sale from an investor standpoint.
+The contract as a whole produces the desired functionality specified and has no known major external vulnerabilities. 
 
-The contracts also contain some minor anti-patterns which allows for scenarios where the tokens bought during the crowd sale become completely unusable.   
+There is a moderate vulnerability which could cause an inflated token total supply if Horizon State become malicious. Horizon State are aware of this and such an attack would be highly visible. 
+
+It is possible for Horizon State to prevent the trading of the token after the token sale has ended. Horizon State are aware of this and express that such a scenario is not in their interests.
 
 ### Contract use-case
 
