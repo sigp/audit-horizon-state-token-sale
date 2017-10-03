@@ -87,7 +87,7 @@ The owner is unable to mint new tokens after the `finishMinting()` function has 
 
 The `totalSupply` variable is updated each time an account buys tokens.
 
-*At any point the owner may call the `finishMinting()` function and prohibit ERC10 transfers for 10 days. If called repeatedly, transfers would be stopped permanently.*
+*At any point the owner may call the `finishMinting()` function and prohibit ERC20 transfers for 10 days. If called repeatedly, transfers would be stopped permanently.*
 
 ## Recommendations
 
