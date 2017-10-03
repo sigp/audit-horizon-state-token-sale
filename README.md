@@ -143,9 +143,16 @@ Typically the `decimals` variable should be used in either the calculation of th
 
 * [x] Fixed in commit `b2589cf`
 
+### General Suggestions following revisions at commit `b2589cf`
+
+**R1: DecisionToken.sol [53]** - The initialisation of this state variable to zero costs approximately 5000 gas. Regardless of the explicit initialisation the variable will be set to zero, without the ~5000 gas cost. As this only happens once during the deployment of the contract, the cost is negligible and raises no security risk.
+
+**R2: DecisionTokenSale.sol [160]** - Checking for `token.mintingFinished()` is redundant as it can never be `true` in the context of this contract. This is because `destroy()` must be called before `token.mintingFinished()` could return `true`, however after this point the contract is destroyed. This poses no security risk and an negligibly small amount of gas usage.
+
+
 ## Tests
 
-A number of unit tests were created to verify the functionality of the token contract. Specifically we tested each case of the purchasing periods to verify the the correct amount of tokens and the exchange rates were given, the ownership functionality worked as expected, the ERC20 interface performs as expected and the constructor of the contracts performed as expected.
+A number of unit tests were created to verify the functionality of the token contract. Specifically we tested each case of the purchasing periods to verify the correct amount of tokens and the exchange rates were given, the ownership functionality worked as expected, the ERC20 interface performs as expected and the constructor of the contracts performed as expected.
 
 The tests were built based on the [Truffle](http://truffleframework.com/) framework which implements [Mocha](https://mochajs.org/).
 
