@@ -45,7 +45,6 @@ The amount of tokens received is always determined by the amount of ether (ETH) 
  - If the current block time is equal to or more than 8 days since the start time, `1 ETH` will purchase `3000 * 10^18`
 
 During the token sale period, it is not possible to transfer tokens. The owner of the contract _must_ call the `finishMinting()` function, after which there is a 10 day delay before transfer is possible.
-*At any point after trading has started, the owner may call the `finishMinting()` function and prohibit transfers for another 10 days. If called repeatedly, transfers would be stopped permanently.*
 
 ### Files audited
 
